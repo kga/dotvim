@@ -22,6 +22,8 @@ Plugin 'vim-perl/vim-perl'
 Plugin 'fatih/vim-go'
 Plugin 'leafgarland/typescript-vim'
 
+Plugin 'nginx.vim'
+
 let g:loaded_matchparen = 1
 Plugin 'itchyny/vim-parenmatch'
 
