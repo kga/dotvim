@@ -13,6 +13,7 @@ Plugin 'tpope/vim-fugitive'
 
 Plugin 'itchyny/lightline.vim'
 Plugin 'tomasr/molokai'
+Plugin 'xoria256.vim'
 
 Plugin 'Shougo/neocomplete'
 Plugin 'Shougo/neosnippet'
@@ -96,6 +97,8 @@ cnoremap <Esc>f <S-Right>
 
 nnoremap <silent> <Space>/ :nohlsearch<CR>
 nnoremap <expr> 0 col('.') == 1 ? '^' : '0'
+
+autocmd QuickFixCmdPost *grep* cwindow
 
 " Plugin settings
 
