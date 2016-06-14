@@ -78,6 +78,8 @@ set laststatus=2
 set ambiwidth=double
 set hidden
 
+set showtabline=2
+
 set completeopt=menuone
 
 set termencoding=utf-8
@@ -101,7 +103,24 @@ nnoremap <expr> 0 col('.') == 1 ? '^' : '0'
 
 autocmd QuickFixCmdPost *grep* cwindow
 
+" {{{ Tab
+nnoremap [Tag] <Nop>
+nmap     t     [Tag]
+
+for n in range(1, 9)
+  execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
+endfor
+
+map <silent> [Tag]c :tablast <bar> tabnew<CR>
+map <silent> [Tag]d :tabclose<CR>
+map <silent> [Tag]n :tabnext<CR>
+map <silent> [Tag]p :tabprevious<CR>
+" }}}
+
 " Plugin settings
+
+" vim-go
+let g:go_fmt_command = "goimports"
 
 " lightline
 let g:lightline = {
@@ -114,6 +133,8 @@ let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
 let g:ctrlp_use_caching = 1
 let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_map = '<Nop>'
+
+let g:ctrlp_ghq_default_action='tabedit'
 
 nnoremap [ctrlp] <Nop>
 nmap     f       [ctrlp]
