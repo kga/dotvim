@@ -20,6 +20,7 @@ Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
 
 Plugin 'vim-perl/vim-perl'
+Plugin 'hotchpotch/perldoc-vim'
 Plugin 'fatih/vim-go'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'derekwyatt/vim-scala'
