@@ -22,6 +22,7 @@ Plugin 'Shougo/neosnippet-snippets'
 Plugin 'vim-perl/vim-perl'
 Plugin 'fatih/vim-go'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'derekwyatt/vim-scala'
 
 Plugin 'nginx.vim'
 
