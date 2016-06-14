@@ -134,8 +134,6 @@ let g:ctrlp_use_caching = 1
 let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_map = '<Nop>'
 
-let g:ctrlp_ghq_default_action='tabedit'
-
 nnoremap [ctrlp] <Nop>
 nmap     f       [ctrlp]
 
