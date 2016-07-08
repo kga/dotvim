@@ -27,6 +27,8 @@ Plugin 'derekwyatt/vim-scala'
 
 Plugin 'nginx.vim'
 
+Plugin 'majutsushi/tagbar'
+
 let g:loaded_matchparen = 1
 Plugin 'itchyny/vim-parenmatch'
 
@@ -121,12 +123,40 @@ map <silent> [Tag]p :tabprevious<CR>
 " Plugin settings
 
 " vim-go
-let g:go_fmt_command = "goimports"
+"let g:go_fmt_command = "goimports"
 
-" lightline
+" {{{ lightline
 let g:lightline = {
       \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified' ],
+      \             [ 'fugitive' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \ },
+      \ 'component_function': {
+      \   'fugitive': 'LightLineFugitive',
+      \   'mode':     'LightLineMode'
       \ }
+      \ }
+
+function! LightLineFugitive()
+  if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+    return 'git:' . fugitive#head()
+  else
+    return ''
+  endif
+endfunction
+
+function! LightLineMode()
+  return  &ft == 'unite' ? 'Unite' :
+        \ &ft == 'vimfiler' ? 'VimFiler' :
+        \ &ft == 'vimshell' ? 'VimShell' :
+        \ winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+" }}}
 
 " {{{ CtrlP
 let g:ctrlp_max_depth = 10
