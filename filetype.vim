@@ -8,3 +8,6 @@ autocmd BufNewFile,BufRead */nginx/*.conf,*.nginx.conf setfiletype nginx
 " tt2
 " setfiletype だとすでに filetype が決定済みの時は実行されない
 autocmd BufNewFile,BufRead */templates/*.html set filetype=tt2html
+
+" Capfile
+autocmd BufNewFile,BufRead,BufEnter Capfile setfiletype ruby
