@@ -68,6 +68,7 @@ set wildmenu
 
 set modelines=0
 set autoindent
+set breakindent
 
 set ignorecase
 set smartcase
