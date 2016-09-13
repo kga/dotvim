@@ -32,6 +32,8 @@ Plugin 'majutsushi/tagbar'
 let g:loaded_matchparen = 1
 Plugin 'itchyny/vim-parenmatch'
 
+Plugin 'junegunn/vim-easy-align'
+
 call vundle#end()
 
 filetype plugin indent on
@@ -236,6 +238,10 @@ let g:neosnippet#snippets_directory = '~/.vim/snippets/'
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 
+" }}}
+
+" {{{ EasyAligh
+vmap <Enter> <Plug>(EasyAlign)
 " }}}
 
 autocmd FileType go nmap <Leader>gd <Plug>(go-doc)
