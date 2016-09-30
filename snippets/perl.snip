@@ -10,3 +10,8 @@ snippet package
     use warnings;
 
     1;
+
+snippet subtest
+    subtest '${1:value}' => sub {
+        ${2:value}
+    };
