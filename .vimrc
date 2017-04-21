@@ -39,12 +39,12 @@ call vundle#end()
 filetype plugin indent on
 syntax on
 
-colorscheme molokai
+colorscheme xoria256
 
 set nobackup
 set directory=~/.vim/swp
 set ruler
-set number
+set nonumber
 
 set backspace=indent,eol,start
 
