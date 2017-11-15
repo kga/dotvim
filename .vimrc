@@ -14,10 +14,14 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'itchyny/lightline.vim'
 Plugin 'tomasr/molokai'
 Plugin 'xoria256.vim'
+Plugin 'arcticicestudio/nord-vim'
 
 Plugin 'Shougo/neocomplete'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
+
+Plugin 'thinca/vim-quickrun'
+Plugin 'tyru/current-func-info.vim'
 
 Plugin 'vim-perl/vim-perl'
 Plugin 'hotchpotch/perldoc-vim'
@@ -26,6 +30,8 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'derekwyatt/vim-scala'
 
 Plugin 'nginx.vim'
+Plugin 'fgsch/vim-varnish'
+Plugin 'motemen/xslate-vim'
 
 Plugin 'majutsushi/tagbar'
 
@@ -39,7 +45,7 @@ call vundle#end()
 filetype plugin indent on
 syntax on
 
-colorscheme xoria256
+colorscheme nord
 
 set nobackup
 set directory=~/.vim/swp
@@ -130,7 +136,7 @@ map <silent> [Tag]p :tabprevious<CR>
 
 " {{{ lightline
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'nord',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'filename', 'modified' ],
@@ -139,6 +145,11 @@ let g:lightline = {
       \              [ 'percent' ],
       \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
       \ },
+      \ 'inactive': {
+      \   'left': [ [],
+      \             [ 'relativepath' ],
+      \             [] ],
+      \ },
       \ 'component_function': {
       \   'fugitive': 'LightLineFugitive',
       \   'mode':     'LightLineMode'
@@ -146,8 +157,8 @@ let g:lightline = {
       \ }
 
 function! LightLineFugitive()
-  if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
-    return 'git:' . fugitive#head()
+  if exists('*fugitive#head')
+    return fugitive#head()
   else
     return ''
   endif
@@ -166,6 +177,7 @@ let g:ctrlp_max_depth = 10
 let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
 let g:ctrlp_use_caching = 1
 let g:ctrlp_clear_cache_on_exit = 1
+let g:ctrlp_mruf_max = 100
 let g:ctrlp_map = '<Nop>'
 
 nnoremap [ctrlp] <Nop>
@@ -246,3 +258,27 @@ vmap <Enter> <Plug>(EasyAlign)
 " }}}
 
 autocmd FileType go nmap <Leader>gd <Plug>(go-doc)
+
+
+" {{{ QuickRun
+let g:quickrun_config = {}
+let g:quickrun_config['prove/carton'] = {
+      \ 'exec'    : 'carton exec -- %c %o -v %s',
+      \ 'command' : 'prove',
+      \ }
+let g:quickrun_config['prove/carton/contextual'] = extend(g:quickrun_config['prove/carton'], {
+      \ 'exec' : 'TEST_METHOD=%a ' . g:quickrun_config['prove/carton'].exec,
+      \ })
+
+command! Prove call s:prove()
+function! s:prove()
+  let func_name = cfi#format('%s', '')
+  if func_name == ''
+    QuickRun prove/carton
+  else
+    execute 'QuickRun prove/carton/contextual -args ' . func_name
+  endif
+endfunction
+
+nnoremap <Leader>p :Prove<CR>
+" }}}

@@ -8,12 +8,13 @@ snippet package
     package ${1:value};
     use strict;
     use warnings;
+    use utf8;
 
     1;
 
 snippet packaget
     package t::${1:value};
-    use t::test;
+    use t::test -2;
 
     ${2:value}
 
