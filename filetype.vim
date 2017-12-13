@@ -11,3 +11,6 @@ autocmd BufNewFile,BufRead */templates/*.html set filetype=tt2html
 
 " Capfile
 autocmd BufNewFile,BufRead,BufEnter Capfile setfiletype ruby
+
+" MySQL
+autocmd BufNewFile,BufRead,BufEnter *.sql setfiletype mysql
