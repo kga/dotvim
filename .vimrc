@@ -147,8 +147,7 @@ let g:lightline = {
       \ },
       \ 'inactive': {
       \   'left': [ [],
-      \             [ 'relativepath' ],
-      \             [] ],
+      \             [ 'relativepath' ] ],
       \ },
       \ 'component_function': {
       \   'fugitive': 'LightLineFugitive',
