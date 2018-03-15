@@ -16,7 +16,8 @@ Plugin 'tomasr/molokai'
 Plugin 'xoria256.vim'
 Plugin 'arcticicestudio/nord-vim'
 
-Plugin 'Shougo/neocomplete'
+Plugin 'maralla/completor.vim'
+Plugin 'maralla/completor-neosnippet'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
 
@@ -188,76 +189,15 @@ nnoremap <silent> [ctrlp]m :<C-u>CtrlPMRUFiles<CR>
 nnoremap <silent> [ctrlp]g :<C-u>CtrlPGhq<CR>
 " }}}
 
-" {{{ neocomplete
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-" Set minimum syntax keyword length.
-let g:neocomplete#min_keyword_length = 2
-
-" Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : ''
-    \ }
-
-" Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-" Plugin key-mappings.
-inoremap <expr><C-g> neocomplete#undo_completion()
-inoremap <expr><C-l> neocomplete#complete_common_string()
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? "\<C-y>" : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-" Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
-
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns = {}
-endif
-" For perlomni.vim setting.
-" https://github.com/c9s/perlomni.vim
-let g:neocomplete#sources#omni#input_patterns.perl =
-\ '[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
-
-" http://hakobe932.hatenablog.com/entry/2014/01/21/214100
-if !exists('g:neocomplete#delimiter_patterns')
-  let g:neocomplete#delimiter_patterns = {}
-endif
-let g:neocomplete#delimiter_patterns.perl = []
-
 let g:neosnippet#snippets_directory = '~/.vim/snippets/'
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
-
-" }}}
 
 " {{{ EasyAligh
 vmap <Enter> <Plug>(EasyAlign)
 " }}}
 
 autocmd FileType go nmap <Leader>gd <Plug>(go-doc)
-
 
 " {{{ QuickRun
 let g:quickrun_config = {}
