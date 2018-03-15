@@ -2,31 +2,33 @@ snippet de
     diag explain ${1:value};
 
 snippet dd
-    use DDP { show_unicode => 1, use_prototypes => 0, colored => 1 }; p ${1:value}
+    use DDP { show_unicode => 1, use_prototypes => 0, colored => 1 }; p ${0}
 
 snippet package
-    package ${1:value};
+    package `expand('%:p:s?.*lib/??:r:gs?/?::?')`;
     use strict;
     use warnings;
     use utf8;
 
+    ${0}
+
     1;
 
 snippet packaget
-    package t::${1:value};
+    package t::${0};
     use t::test -2;
 
-    ${2:value}
+    ${1}
 
 snippet subtest
-    subtest '${1:value}' => sub {
+    subtest '${0}' => sub {
     };
 
 snippet tests
-    sub ${1:value} : Tests {
+    sub ${0} : Tests {
     }
 
 snippet args
     args my $class => 'ClassName',
-         my $${1:value},
+         my $${0},
          ;
