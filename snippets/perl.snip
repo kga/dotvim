@@ -32,3 +32,11 @@ snippet args
     args my $class => 'ClassName',
          my $${0},
          ;
+
+snippet kytprof
+    use Devel::KYTProf;
+    Devel::KYTProf->mute('DBI');
+    Devel::KYTProf->mute('DBI::st');
+
+    Devel::KYTProf->unmute('DBI');
+    Devel::KYTProf->unmute('DBI::st');
