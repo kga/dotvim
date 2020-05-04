@@ -1,47 +1,42 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin()
 
-Plugin 'VundleVim/Vundle.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mattn/ctrlp-ghq'
 
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'mattn/ctrlp-ghq'
+Plug 'tpope/vim-fugitive'
 
-Plugin 'tpope/vim-fugitive'
+Plug 'itchyny/lightline.vim'
+Plug 'tomasr/molokai'
+Plug 'arcticicestudio/nord-vim'
 
-Plugin 'itchyny/lightline.vim'
-Plugin 'tomasr/molokai'
-Plugin 'xoria256.vim'
-Plugin 'arcticicestudio/nord-vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'prabirshrestha/asyncomplete-neosnippet.vim'
 
-Plugin 'maralla/completor.vim'
-Plugin 'maralla/completor-neosnippet'
-Plugin 'Shougo/neosnippet'
-Plugin 'Shougo/neosnippet-snippets'
+Plug 'thinca/vim-quickrun'
+Plug 'tyru/current-func-info.vim'
 
-Plugin 'thinca/vim-quickrun'
-Plugin 'tyru/current-func-info.vim'
+Plug 'vim-perl/vim-perl'
+Plug 'hotchpotch/perldoc-vim'
+Plug 'fatih/vim-go'
+Plug 'leafgarland/typescript-vim'
+Plug 'derekwyatt/vim-scala'
 
-Plugin 'vim-perl/vim-perl'
-Plugin 'hotchpotch/perldoc-vim'
-Plugin 'fatih/vim-go'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'derekwyatt/vim-scala'
+Plug 'fgsch/vim-varnish'
+Plug 'motemen/xslate-vim'
 
-Plugin 'nginx.vim'
-Plugin 'fgsch/vim-varnish'
-Plugin 'motemen/xslate-vim'
-
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
 let g:loaded_matchparen = 1
-Plugin 'itchyny/vim-parenmatch'
+Plug 'itchyny/vim-parenmatch'
 
-Plugin 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-easy-align'
 
-call vundle#end()
+call plug#end()
 
 filetype plugin indent on
 syntax on
