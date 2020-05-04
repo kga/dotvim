@@ -24,10 +24,6 @@ Plug 'vim-perl/vim-perl'
 Plug 'hotchpotch/perldoc-vim'
 Plug 'fatih/vim-go'
 Plug 'leafgarland/typescript-vim'
-Plug 'derekwyatt/vim-scala'
-
-Plug 'fgsch/vim-varnish'
-Plug 'motemen/xslate-vim'
 
 Plug 'majutsushi/tagbar'
 
@@ -35,6 +31,12 @@ let g:loaded_matchparen = 1
 Plug 'itchyny/vim-parenmatch'
 
 Plug 'junegunn/vim-easy-align'
+
+" language server
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 call plug#end()
 
@@ -184,6 +186,12 @@ nnoremap <silent> [ctrlp]m :<C-u>CtrlPMRUFiles<CR>
 nnoremap <silent> [ctrlp]g :<C-u>CtrlPGhq<CR>
 " }}}
 
+call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
+    \ 'name': 'neosnippet',
+    \ 'whitelist': ['*'],
+    \ 'completor': function('asyncomplete#sources#neosnippet#completor'),
+    \ }))
+
 let g:neosnippet#snippets_directory = '~/.vim/snippets/'
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -216,3 +224,7 @@ endfunction
 
 nnoremap <Leader>p :Prove<CR>
 " }}}
+
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
