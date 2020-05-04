@@ -1,1 +1,0 @@
-try-tiny.vim
