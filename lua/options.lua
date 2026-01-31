@@ -31,7 +31,6 @@ opt.incsearch = false
 opt.showmatch = true
 opt.matchpairs:append("<:>")
 
-opt.ambiwidth = "double"
 opt.hidden = true
 
 opt.showtabline = 2
