@@ -1,7 +1,6 @@
 local opt = vim.opt
 
 opt.backup = false
-opt.directory = vim.fn.stdpath("config") .. "/swp"
 opt.number = false
 
 opt.list = true

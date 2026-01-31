@@ -1,4 +1,2 @@
 *.sw?
 .netrwhist
-/swp/*
-!/swp/.gitkeep
