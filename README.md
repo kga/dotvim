@@ -21,16 +21,14 @@ lua/
   keymaps.lua           キーマッピング
   autocmds.lua          autocmd
   plugins/
-    init.lua            lazy.nvim ブートストラップ
+    init.lua            lazy.nvim ブートストラップ + easy-align
     colorscheme.lua     nord.nvim
     lualine.lua         ステータスライン
     telescope.lua       ファジーファインダー (ff/fb/fm/fg)
     nvim-tree.lua       ファイルツリー
     lsp.lua             nvim-lspconfig + mason.nvim
-    cmp.lua             nvim-cmp + LuaSnip
+    cmp.lua             nvim-cmp
     git.lua             vim-fugitive
-    lang.lua            vim-go
-    misc.lua            easy-align
 ```
 
 ## LSP サーバー
