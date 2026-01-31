@@ -1,4 +1,4 @@
-bundle/
 *.sw?
 .netrwhist
-/plugged
+/swp/*
+!/swp/.gitkeep
