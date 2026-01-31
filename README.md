@@ -19,7 +19,7 @@ init.lua                エントリポイント
 lua/
   options.lua           vim.opt 設定
   keymaps.lua           キーマッピング
-  autocmds.lua          autocmd + filetype 検出
+  autocmds.lua          autocmd
   plugins/
     init.lua            lazy.nvim ブートストラップ
     colorscheme.lua     nord.nvim
@@ -29,12 +29,8 @@ lua/
     lsp.lua             nvim-lspconfig + mason.nvim
     cmp.lua             nvim-cmp + LuaSnip
     git.lua             vim-fugitive
-    lang.lua            言語別プラグイン (perl, go)
-    misc.lua            easy-align, quickrun, tagbar
-after/ftplugin/
-  perl.lua              Perl ftplugin
-snippets/
-  perl.json             Perl スニペット (VS Code JSON 形式)
+    lang.lua            vim-go
+    misc.lua            easy-align
 ```
 
 ## LSP サーバー
@@ -42,5 +38,4 @@ snippets/
 `:Mason` で管理。自動インストール対象:
 
 - `gopls` (Go)
-- `perlnavigator` (Perl)
 - `ts_ls` (TypeScript)

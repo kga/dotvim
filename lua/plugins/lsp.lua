@@ -7,7 +7,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     dependencies = { "williamboman/mason.nvim" },
     opts = {
-      ensure_installed = { "gopls", "perlnavigator", "ts_ls" },
+      ensure_installed = { "gopls", "ts_ls" },
     },
   },
   {
@@ -20,7 +20,7 @@ return {
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      local servers = { "gopls", "perlnavigator", "ts_ls" }
+      local servers = { "gopls", "ts_ls" }
       for _, server in ipairs(servers) do
         vim.lsp.config(server, {
           capabilities = capabilities,
