@@ -10,8 +10,6 @@ opt.display = "lastline"
 opt.foldenable = true
 opt.foldmethod = "marker"
 
-opt.suffixes = ".bak,~,.swp,.o,.info,.aux,.log"
-
 opt.expandtab = true
 opt.tabstop = 4
 opt.softtabstop = 4
