@@ -11,7 +11,7 @@ opt.display = "lastline"
 opt.foldenable = true
 opt.foldmethod = "marker"
 
-opt.suffixes = ".bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc"
+opt.suffixes = ".bak,~,.swp,.o,.info,.aux,.log"
 
 opt.expandtab = true
 opt.tabstop = 4
