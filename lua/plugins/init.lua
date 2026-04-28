@@ -15,5 +15,4 @@ require("lazy").setup({
   { import = "plugins.colorscheme" },
   { import = "plugins.lualine" },
   { import = "plugins.telescope" },
-  { import = "plugins.lsp" },
 })
