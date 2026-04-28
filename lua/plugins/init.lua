@@ -16,12 +16,4 @@ require("lazy").setup({
   { import = "plugins.lualine" },
   { import = "plugins.telescope" },
   { import = "plugins.lsp" },
-  { import = "plugins.cmp" },
-
-  {
-    "junegunn/vim-easy-align",
-    keys = {
-      { "<Enter>", "<Plug>(EasyAlign)", mode = "v", desc = "Easy Align" },
-    },
-  },
 })
