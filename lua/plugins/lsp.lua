@@ -15,16 +15,10 @@ return {
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
-      "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
       local servers = { "gopls", "ts_ls" }
       for _, server in ipairs(servers) do
-        vim.lsp.config(server, {
-          capabilities = capabilities,
-        })
         vim.lsp.enable(server)
       end
 
