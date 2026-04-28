@@ -1,18 +1,12 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
-require("lazy").setup({
-  { import = "plugins.colorscheme" },
-  { import = "plugins.lualine" },
-  { import = "plugins.telescope" },
+vim.pack.add({
+  { src = "https://github.com/shaunsingh/nord.nvim" },
+  { src = "https://github.com/filipjanevski/0x96f.nvim" },
+  { src = "https://github.com/nvim-lua/plenary.nvim" },
+  { src = "https://github.com/nvim-tree/nvim-web-devicons" },
+  { src = "https://github.com/nvim-lualine/lualine.nvim" },
+  { src = "https://github.com/nvim-telescope/telescope.nvim" },
 })
+
+require("plugins.colorscheme")
+require("plugins.lualine")
+require("plugins.telescope")
