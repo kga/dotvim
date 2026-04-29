@@ -5,6 +5,11 @@
       "src": "https://github.com/filipjanevski/0x96f.nvim",
       "version": "'v0.2.1'"
     },
+    "fzf-lua": {
+      "rev": "b437bafc981a180d609bb4092c56ce8999f7a2c4",
+      "src": "https://github.com/ibhagwan/fzf-lua",
+      "version": "'b437bafc981a180d609bb4092c56ce8999f7a2c4'"
+    },
     "lualine.nvim": {
       "rev": "131a558e13f9f28b15cd235557150ccb23f89286",
       "src": "https://github.com/nvim-lualine/lualine.nvim",
