@@ -3,7 +3,7 @@
     "0x96f.nvim": {
       "rev": "188c2be71a4e046df7cea095ccd61a520ee21249",
       "src": "https://github.com/filipjanevski/0x96f.nvim",
-      "version": "'188c2be71a4e046df7cea095ccd61a520ee21249'"
+      "version": "'v0.2.1'"
     },
     "lualine.nvim": {
       "rev": "131a558e13f9f28b15cd235557150ccb23f89286",
